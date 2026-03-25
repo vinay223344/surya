@@ -1,0 +1,52 @@
+Write a Verilog (design) module count_0918273645 for a counter that starts from zero after reset is de-
+asserted, and counts in the following fashion: 0 to 9 to 1 to 8 to 2 to 7 to 3 to 6 to 4 to 5 and re-traces the
+count back to the first 1 and repeats the sequence from 0, such that no count appears twice in succession.
+\u2022 The count must be the output of Flipflops.
+\u2022 A design with the least number of flipflops is desired.
+Write a test bench to verify the count sequence. Use asynch active low reset signal rst.
+Name the ports: clk, rst,(inputs) count (output).
+DO NOT CHANGE THE MODULE AND PORT NAMES.
+(40)
+1. Write a Verilog module candy_vending_with_CNCL_BUY for the earlier discussed Candy vending machine
+controller, but now with the following specifications:
+I.
+The logic-1 signal generated on the nickel, dime and quarter (n, d, q) inputs lasts anywhere
+from 3 to 5 clock periods.
+II.
+Once the amount of money deposited is equal to or more than the cost of the candy (25cents),
+further coins are not accepted by the machine till the transaction is either cancelled by
+pressing the CNCL button or completed by pressing the BUY button.
+III.
+CNCL and BUY input signals can be from 2 to 4 clock-periods duration. These signals do not
+come in the middle of a coin pulse. CNCL and BUY cannot be pressed simultaneously.
+IV.
+Pressing the CNCL button causes refund of the full amount deposited. Refund need not be in
+the same denomination as the deposited coins. Refund can be given in nickels, dimes and
+quarters, and refund must have as many types of coins as possible; at the same time minimum
+number of coins must be used. (Assume that coins of all denominations are available). CNCL
+can be used after one or more coins have been deposited.
+V.
+The BUY button confirms the purchase, causing candy to be delivered and the change to be
+returned. While returning the change, coins should be given out in the highest possible
+denomination(s).
+VI.
+All other specifications as discussed earlier remain the same. i.e there must be a pulse signal
+for a coin to be returned. Different types of coins \u2013 nickel, dime, quarter - can be returned
+simultaneously. If two coins of the same type must be returned, two pulses need to be
+produced.
+VII.
+Use the following port names for the module: clk, rst, CNCL, BUY, n, d, q, (inputs) and
+dispense, rN, rD, rQ (outputs). The last 3 outputs are for returning Nickel, Dime and Quarter
+respectively.VIII.
+IX.
+X.
+XI.
+XII.
+DO NOT CHANGE THE PORT NAMES, as your design module will be instantiated in a test bench
+which uses the given port names. Any change in the port names will cause the simulation to
+fail.
+Use active low asynchronous reset.
+A design with the least number of states, meeting the above specification, is desirable.
+Write a test bench containing tasks: insert_nickel, insert_dime and insert_quarter, which
+produce signals of 3 to 5 clock periods on the inputs of the design module.
+Make suitable assumptions wherever needed and mention them.
